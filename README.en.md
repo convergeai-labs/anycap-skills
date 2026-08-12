@@ -38,6 +38,26 @@ Hard-won lessons baked in:
 
 Battle-tested on two shipped marks: the [convergeai-labs rainbow ring](https://github.com/convergeai-labs/anycap-examples/tree/main/entries/2026-08-convergeai-labs-avatar) and the [kt-aicoding pixel spark](https://github.com/convergeai-labs/anycap-examples/tree/main/entries/2026-08-kt-aicoding-pixel-spark).
 
+### 🏗 [anycap-architecture-diagrams](skills/anycap-architecture-diagrams/SKILL.md)
+
+Architecture / system diagrams with AnyCap — fact-graph-first prompting with a public-safety pass:
+
+```
+sanitize the fact graph (internal names → public roles)
+   ▼
+freeze the contract (nodes / edges / exact label whitelist)
+   ▼
+branch: T1 full-generated / hybrid (no-text plate + deterministic labels) / deterministic retreat
+   ▼
+generate (fact graph in the prompt) ──▶ image-read label audit (not vibes)
+   ▼
+provenance
+```
+
+Core discipline: sanitize before generating (a diagram is a condensed system map), audit labels verbatim, one failure → regenerate naming it, two failures → switch branch, and use synthetic reference systems for teaching figures.
+
+Proof: the [RAG reference architecture](https://github.com/convergeai-labs/anycap-examples/tree/main/entries/2026-08-rag-reference-architecture) passed audit on the first candidate.
+
 ## Install
 
 Copy a skill directory into `~/.claude/skills/`, or symlink it:

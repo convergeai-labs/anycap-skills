@@ -38,6 +38,29 @@ i2i 换色（一次只动一个变量）
 
 已在两个真实定稿上验证：[convergeai-labs 彩虹环](https://github.com/convergeai-labs/anycap-examples/tree/main/entries/2026-08-convergeai-labs-avatar) 与 [kt-aicoding 像素星芒](https://github.com/convergeai-labs/anycap-examples/tree/main/entries/2026-08-kt-aicoding-pixel-spark)。
 
+### 🏗 [anycap-architecture-diagrams](skills/anycap-architecture-diagrams/SKILL.md)
+
+用 AnyCap 产出架构图 / 系统图——事实图优先、标签白名单审计、公开安全前置：
+
+```
+事实图脱敏（内部名→公开角色）──▶ 冻结契约（节点/边/标签白名单）
+   ▼
+选分支：T1 全生成 / 混合（无字底板+确定性标注）/ 退回 Mermaid
+   ▼
+生成（事实图写进 prompt）──▶ image-read 逐标签审计（不是看感觉）
+   ▼
+provenance 存档
+```
+
+核心纪律：
+
+- **先脱敏事实图再生成**——架构图是浓缩的系统地图，扫描器看不见的泄露它全有
+- **审计标签而非氛围**——逐字核对白名单、逐条核对箭头方向
+- **一次失败点名重修，两次失败换分支**——别在同一分支上反复抽卡
+- 教学/示例图用**合成参考系统**，不用任何真实部署
+
+实证：[RAG 参考架构图](https://github.com/convergeai-labs/anycap-examples/tree/main/entries/2026-08-rag-reference-architecture)（一次生成即通过审计）。
+
 ## 安装
 
 把 skill 目录复制到 `~/.claude/skills/`，或者软链：

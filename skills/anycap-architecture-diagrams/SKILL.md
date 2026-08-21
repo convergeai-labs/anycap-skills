@@ -22,6 +22,7 @@ An architecture diagram is a浓缩的系统地图 — it leaks exactly what scan
 - Fact graph: node list, edge list with direction, **exact label whitelist**
 - Grammar: layered architecture / request flow / deployment / state machine — one per figure
 - Surface: doc inline (16:9 or 4:3), slide, or README hero
+- **Style — freeze it too.** Default to the editorial language: warm-white canvas (#FAFAF7), navy (#1E3A5F) structure, accent colors only where they carry meaning, bold title + one-line takeaway caption, text-only cards (no provider logos/icons). A dark "dashboard chrome" theme (saturated neon boxes on navy) reads as a themed Mermaid export — "looks like Mermaid" is a reject reason even when every label is correct.
 
 ## 2. Choose the production branch
 

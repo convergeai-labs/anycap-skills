@@ -1,6 +1,16 @@
+<p align="center">
+  <img src="assets/banner.png" width="100%" alt="anycap-skills 工作台横幅">
+</p>
+
 # anycap-skills
 
-面向 [AnyCap](https://anycap.ai)（agent 能力运行时）的 Claude Code skill 集。由 [@kevinten10](https://github.com/kevinten10) 维护的个人项目，归属 [convergeai-labs](https://github.com/convergeai-labs)。
+<p>
+  <a href="LICENSE"><img src="https://img.shields.io/badge/license-MIT-19C7F3" alt="MIT"></a>
+  <img src="https://img.shields.io/badge/skills-2-F6A91A" alt="2 skills">
+  <a href="README.en.md"><img src="https://img.shields.io/badge/lang-EN-blue" alt="English"></a>
+</p>
+
+**让 agent 用 [AnyCap](https://anycap.ai) 做出能直接上线的视觉资产**——不是抽卡碰运气，而是带门禁、审计和 provenance 的生产流水线。由 [@kevinten10](https://github.com/kevinten10) 维护的个人项目，归属 [convergeai-labs](https://github.com/convergeai-labs)。
 
 [English version → README.en.md](README.en.md)
 

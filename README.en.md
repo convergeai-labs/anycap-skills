@@ -1,6 +1,16 @@
+<p align="center">
+  <img src="assets/banner.png" width="100%" alt="anycap-skills workbench banner">
+</p>
+
 # anycap-skills
 
-Claude Code skills for [AnyCap](https://anycap.ai) — the agent capability runtime. Personal projects by [@kevinten10](https://github.com/kevinten10), part of [convergeai-labs](https://github.com/convergeai-labs).
+<p>
+  <a href="LICENSE"><img src="https://img.shields.io/badge/license-MIT-19C7F3" alt="MIT"></a>
+  <img src="https://img.shields.io/badge/skills-2-F6A91A" alt="2 skills">
+  <a href="README.md"><img src="https://img.shields.io/badge/lang-中文-red" alt="中文"></a>
+</p>
+
+**Production pipelines for agents creating ship-ready visual assets with [AnyCap](https://anycap.ai)** — no lucky dice rolls: every workflow ships with gates, audits, and provenance. Personal projects by [@kevinten10](https://github.com/kevinten10), part of [convergeai-labs](https://github.com/convergeai-labs).
 
 [中文版本 → README.md](README.md)
 

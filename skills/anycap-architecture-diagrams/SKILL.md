@@ -55,6 +55,8 @@ anycap actions image-read --file candidate.png \
 
 Typical failure modes: misspelled labels, merged nodes, reversed arrows, hallucinated extra services, pseudo-text watermarks. **One concrete failure → regenerate with the failure named in the prompt. Two failed audits → switch branch (hybrid or deterministic).** Don't keep rolling the same branch.
 
+Measured ceiling (two shipped projects): T1 full generation with inline labels is reliable up to **~6 nodes / ~6 edges**. At 8 nodes × 8 arrows, every roll drifted exactly one arrow — a different one each time (fix-one-break-another carousel). Layout-first prompt fixes (place a node so its required arrow is short and vertical) are a valid second-round move, but they don't move the ceiling. Retreating to a deterministic SVG/Mermaid for the densest view is a branch decision, not a failure — the deterministic source doubles as the editable truth layer.
+
 ## 5. Hybrid finishing when labels must be perfect
 
 Generate a no-text plate (gate it CLEAN like any brand mark), then overlay labels deterministically (HTML/CSS, SVG, or an editor). The plate carries the mood; the overlay carries the truth.
@@ -72,3 +74,4 @@ Generate a no-text plate (gate it CLEAN like any brand mark), then overlay label
 - Accepting a diagram because it "looks professional" while two arrows point backwards
 - More than ~12 nodes in one generated figure — split into views
 - Shipping the raster without keeping the fact graph — the next edit restarts from zero
+- Shipping a single overview when the system has distinct questions — a small-multiples **view set** (overview / request flow / data pipeline / deployment), all projecting one frozen fact model, beats one overloaded poster. Views share node names, palette, typography, and connector style; change the model in one view and you must change all.

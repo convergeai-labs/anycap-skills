@@ -1,0 +1,33 @@
+svg {
+  font-family: Inter, "PingFang SC", "Microsoft YaHei", "Noto Sans CJK SC", sans-serif !important;
+}
+
+.flowchartTitleText,
+.sequenceTitleText,
+.stateTitleText,
+.titleText {
+  fill: #172033 !important;
+  font-size: 28px !important;
+  font-weight: 700 !important;
+}
+
+.nodeLabel,
+.edgeLabel,
+.messageText,
+.labelText,
+.loopText,
+.noteText {
+  color: #172033 !important;
+  fill: #172033 !important;
+}
+
+.edgeLabel rect,
+.labelBkg {
+  fill: #ffffff !important;
+  opacity: 0.96 !important;
+}
+
+.cluster rect {
+  rx: 8px !important;
+  ry: 8px !important;
+}

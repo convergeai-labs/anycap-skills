@@ -1,0 +1,4 @@
+interface:
+  display_name: "AnyCap Research"
+  short_description: "Run verified AnyCap research and football analysis"
+  default_prompt: "Use $anycap-research to investigate this question with dated, traceable AnyCap evidence."

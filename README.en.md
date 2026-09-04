@@ -6,7 +6,7 @@
 
 <p>
   <a href="LICENSE"><img src="https://img.shields.io/badge/license-MIT-19C7F3" alt="MIT"></a>
-  <img src="https://img.shields.io/badge/skills-2-F6A91A" alt="2 skills">
+  <img src="https://img.shields.io/badge/skills-5-F6A91A" alt="5 skills">
   <a href="README.md"><img src="https://img.shields.io/badge/lang-中文-red" alt="中文"></a>
 </p>
 
@@ -67,6 +67,20 @@ provenance
 Core discipline: sanitize before generating (a diagram is a condensed system map), audit labels verbatim, one failure → regenerate naming it, two failures → switch branch, and use synthetic reference systems for teaching figures.
 
 Proof: the [RAG reference architecture](https://github.com/convergeai-labs/anycap-examples/tree/main/entries/2026-08-rag-reference-architecture) passed audit on the first candidate.
+
+### 🎬 [anycap-media](skills/anycap-media/SKILL.md)
+
+The AnyCap media production workhorse: photos, product shots, brand marks, decorative images, image edits, video, music/speech, campaign & social films, memes with deterministic captions. Routes per medium to one-level references — load only what the current job needs.
+
+### 🔍 [anycap-research](skills/anycap-research/SKILL.md)
+
+Multi-source investigations: market/competitive research, technical deep dives, literature reviews, evidence-backed comparisons. Claim-ledger driven — every conclusion carries its evidence.
+
+### ✋ [anycap-human-interaction](skills/anycap-human-interaction/SKILL.md)
+
+Human-in-the-loop: annotation feedback on images/video/audio, narrated URL reviews, collaborative whiteboards. Feedback becomes an acceptance ledger — one collection pass + one targeted recheck, no endless iteration.
+
+> Note: `anycap-access` (CLI/MCP access layer) and `anycap-content` (content production) referenced inside these skills are not included in this bundle; routing mentions are conceptual pointers.
 
 ## Install
 

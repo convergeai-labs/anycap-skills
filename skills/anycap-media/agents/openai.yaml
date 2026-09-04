@@ -1,0 +1,4 @@
+interface:
+  display_name: "AnyCap Media"
+  short_description: "Produce AnyCap media and delegated technical visuals"
+  default_prompt: "Use $anycap-media to produce and verify this explicit AnyCap media asset."

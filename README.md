@@ -6,7 +6,7 @@
 
 <p>
   <a href="LICENSE"><img src="https://img.shields.io/badge/license-MIT-19C7F3" alt="MIT"></a>
-  <img src="https://img.shields.io/badge/skills-2-F6A91A" alt="2 skills">
+  <img src="https://img.shields.io/badge/skills-5-F6A91A" alt="5 skills">
   <a href="README.en.md"><img src="https://img.shields.io/badge/lang-EN-blue" alt="English"></a>
 </p>
 
@@ -70,6 +70,20 @@ provenance 存档
 - 教学/示例图用**合成参考系统**，不用任何真实部署
 
 实证：[RAG 参考架构图](https://github.com/convergeai-labs/anycap-examples/tree/main/entries/2026-08-rag-reference-architecture)（一次生成即通过审计）。
+
+### 🎬 [anycap-media](skills/anycap-media/SKILL.md)
+
+AnyCap 全媒体生产主力 skill：照片/产品图/品牌标/装饰图、图片编辑、视频、音乐/语音、宣传片与社交短片、meme（确定性字幕）。按媒介路由到对应参考文件，只加载当前任务需要的那一份。
+
+### 🔍 [anycap-research](skills/anycap-research/SKILL.md)
+
+多源调研：市场/竞品研究、技术深挖、文献综述、证据支撑的对照比较。claim ledger 驱动，每条结论挂证据。
+
+### ✋ [anycap-human-interaction](skills/anycap-human-interaction/SKILL.md)
+
+人参与环：图片/视频/音频标注反馈、带叙述的 URL 评审、协作白板。反馈转成验收清单，一次收集 + 一次针对性复查，不做无限迭代。
+
+> 注：这 3 个 skill 中提到的 `anycap-access`（CLI/MCP 接入层）与 `anycap-content`（内容生产）未包含在本包内，相关路由提示仅作概念参考。
 
 ## 安装
 

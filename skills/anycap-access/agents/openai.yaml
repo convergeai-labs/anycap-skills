@@ -1,0 +1,4 @@
+interface:
+  display_name: "AnyCap Access"
+  short_description: "Route AnyCap CLI/MCP transport, auth, and release evidence"
+  default_prompt: "Use $anycap-access to select one AnyCap CLI or MCP route, distinguish CLI stdio, npm package, Hosted HTTP, and hosted-route availability, then verify it with live protocol evidence."

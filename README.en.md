@@ -6,7 +6,7 @@
 
 <p>
   <a href="LICENSE"><img src="https://img.shields.io/badge/license-MIT-19C7F3" alt="MIT"></a>
-  <img src="https://img.shields.io/badge/skills-5-F6A91A" alt="5 skills">
+  <img src="https://img.shields.io/badge/skills-7-F6A91A" alt="7 skills">
   <a href="README.md"><img src="https://img.shields.io/badge/lang-中文-red" alt="中文"></a>
 </p>
 
@@ -80,7 +80,13 @@ Multi-source investigations: market/competitive research, technical deep dives, 
 
 Human-in-the-loop: annotation feedback on images/video/audio, narrated URL reviews, collaborative whiteboards. Feedback becomes an acceptance ledger — one collection pass + one targeted recheck, no endless iteration.
 
-> Note: `anycap-access` (CLI/MCP access layer) and `anycap-content` (content production) referenced inside these skills are not included in this bundle; routing mentions are conceptual pointers.
+### 🔌 [anycap-access](skills/anycap-access/SKILL.md)
+
+The CLI/MCP access layer: install/login/config, live schema discovery, local stdio vs Hosted HTTP routing, protocol smoke tests, daemon troubleshooting, Drive/Page delivery. The fallback when other skills hit auth or low-level errors.
+
+### ✍️ [anycap-content](skills/anycap-content/SKILL.md)
+
+Content production: SEO planning and audits for AI-tool/SaaS sites (ICP, intent, SERP, page types), plus answer-first blog/tutorial/comparison drafts built from an approved evidence ledger.
 
 ## Install
 

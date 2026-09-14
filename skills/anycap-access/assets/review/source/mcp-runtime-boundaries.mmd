@@ -1,0 +1,24 @@
+flowchart LR
+  accTitle: AnyCap MCP 接入与验证路径
+  accDescr: 客户端选择本地 stdio、Hosted HTTP 或自带 gateway profile；本地 stdio 再选择 CLI 内置命令或已证明可用的独立 npm 包，最后统一完成协议与最小调用验证。
+  C[MCP 客户端]
+  L[本地 stdio]
+  LC[CLI 内置\nanycap mcp]
+  LN[独立 npm 包\n发布证明或本地 RC]
+  H[Hosted HTTP\n用户提供 HTTPS /mcp]
+  G[自带 gateway\n已配置 profile]
+  A2[OAuth metadata 与 bearer]
+  A3[profile 鉴权]
+  P[initialize → tools/list → 最小调用]
+
+  C -->|本地进程 + 本地鉴权| L
+  L -->|优先| LC
+  L -->|独立备选| LN
+  C -->|HTTPS| H
+  C -->|已配置 profile| G
+  A2 -. 鉴权 .-> H
+  A3 -. 鉴权 .-> G
+  LC --> P
+  LN --> P
+  H --> P
+  G --> P

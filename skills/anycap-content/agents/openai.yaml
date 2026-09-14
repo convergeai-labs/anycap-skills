@@ -1,0 +1,4 @@
+interface:
+  display_name: "AnyCap Content"
+  short_description: "Plan AnyCap SEO and draft evidence-led product content"
+  default_prompt: "Use $anycap-content to plan or draft this evidence-backed AnyCap content job."

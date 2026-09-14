@@ -6,7 +6,7 @@
 
 <p>
   <a href="LICENSE"><img src="https://img.shields.io/badge/license-MIT-19C7F3" alt="MIT"></a>
-  <img src="https://img.shields.io/badge/skills-5-F6A91A" alt="5 skills">
+  <img src="https://img.shields.io/badge/skills-7-F6A91A" alt="7 skills">
   <a href="README.en.md"><img src="https://img.shields.io/badge/lang-EN-blue" alt="English"></a>
 </p>
 
@@ -83,7 +83,13 @@ AnyCap 全媒体生产主力 skill：照片/产品图/品牌标/装饰图、图�
 
 人参与环：图片/视频/音频标注反馈、带叙述的 URL 评审、协作白板。反馈转成验收清单，一次收集 + 一次针对性复查，不做无限迭代。
 
-> 注：这 3 个 skill 中提到的 `anycap-access`（CLI/MCP 接入层）与 `anycap-content`（内容生产）未包含在本包内，相关路由提示仅作概念参考。
+### 🔌 [anycap-access](skills/anycap-access/SKILL.md)
+
+CLI/MCP 接入层：安装/登录/配置、live schema 发现、本地 stdio 与 Hosted HTTP 路由选择、协议冒烟、daemon 排障、Drive/Page 交付。当其他 skill 报鉴权或低层错误时回到这里。
+
+### ✍️ [anycap-content](skills/anycap-content/SKILL.md)
+
+内容生产：AI 工具/SaaS 的 SEO 规划与审计（ICP/意图/SERP/页面类型），以及把已批准的证据转成 answer-first 的博客/教程/对比页草稿。
 
 ## 安装
 

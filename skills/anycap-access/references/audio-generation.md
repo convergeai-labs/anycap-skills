@@ -1,0 +1,111 @@
+# Audio Generation
+
+Generate speech, dialogue, and complete audio scenes from text, audio, or image inputs. A complete scene can combine voices, background music, ambience, and sound effects. Generated outputs are downloaded automatically and returned as JSON with their local paths and audio metadata.
+
+## Discover Before Generating
+
+Always use the live catalog. Model availability and supported controls come from the server's live model catalog.
+
+```bash
+anycap audio models
+anycap audio models <model-id>
+anycap audio models <model-id> schema --mode text-to-audio
+anycap audio models <model-id> schema --mode audio-to-audio
+anycap audio models <model-id> schema --mode image-to-audio
+```
+
+Do not guess formats, sample rates, numeric ranges, or reference limits. Read the selected mode's schema and pass only advertised parameters.
+
+## Modes
+
+### Text to Audio
+
+Generate synthesized speech, dialogue, or a complete mixed audio scene from a prompt. A model may expose an optional `speaker_ids` array for a voice reference; when present, follow its schema limit.
+
+```bash
+anycap audio generate \
+  --prompt 'A calm narrator says: "Welcome to AnyCap." Warm delivery with quiet studio ambience.' \
+  --model <model-id> \
+  --mode text-to-audio \
+  -o welcome-introduction.mp3
+```
+
+If the schema advertises speaker references:
+
+```bash
+anycap audio generate \
+  --prompt "a calm spoken introduction over a quiet room tone" \
+  --model <model-id> \
+  --mode text-to-audio \
+  --param speaker_ids=<speaker-id> \
+  -o introduction.mp3
+```
+
+### Audio to Audio
+
+Guide a new voice performance or complete scene with reference audio. This is reference-guided generation, not a general-purpose audio editor. `audios` accepts a local path or an `http(s)` URL; local files are uploaded automatically.
+
+```bash
+anycap audio generate \
+  --prompt 'Create a new spoken welcome with the reference delivery style and a warmer room tone.' \
+  --model <model-id> \
+  --mode audio-to-audio \
+  --param audios=./reference.wav \
+  -o guided-welcome.mp3
+```
+
+For multiple references, pass a JSON array only when the live schema permits it:
+
+```bash
+--param audios='["./reference-a.wav","./reference-b.wav"]'
+```
+
+### Image to Audio
+
+Generate speech, dialogue, or a complete audio scene guided by an image. `images` accepts a local path or URL.
+
+```bash
+anycap audio generate \
+  --prompt 'A guide briefly describes this scene while matching ambience plays underneath.' \
+  --model <model-id> \
+  --mode image-to-audio \
+  --param images=./scene.png \
+  -o guided-scene.mp3
+```
+
+## Common Controls
+
+Controls are schema-driven and can include `format`, `sample_rate`, `speech_rate`, `loudness_rate`, `pitch_rate`, and `enable_subtitle`.
+
+```bash
+anycap audio generate \
+  --prompt 'A clear voice says: "The program is about to begin."' \
+  --model <model-id> \
+  --param format=mp3 \
+  --param sample_rate=24000 \
+  --param enable_subtitle=true \
+  -o program-introduction.mp3
+```
+
+The example values are illustrative. Confirm them against the selected model and mode schema before use.
+
+## Output
+
+The command writes one final JSON document to stdout. Audio outputs can contain:
+
+- `local_path`: absolute path of the downloaded file
+- `url`: server-provided artifact URL
+- `mime_type`
+- `duration_seconds`
+- `original_duration_seconds`
+- `size_bytes`
+- `subtitle`, when requested and returned
+
+Root-level output can also include usage metadata, `task_id`, and invocation diagnostics.
+
+```bash
+anycap audio generate --prompt "..." --model <model-id> -o output.mp3 \
+  | jq -r '.outputs[0].local_path'
+```
+
+If an individual download fails after provider generation succeeded, that output contains an `error` field instead of hiding the successful provider result.

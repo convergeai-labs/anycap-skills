@@ -75,6 +75,8 @@ provenance 存档
 
 AnyCap 全媒体生产主力 skill：照片/产品图/品牌标/装饰图、图片编辑、视频、音乐/语音、宣传片与社交短片、meme（确定性字幕）。按媒介路由到对应参考文件，只加载当前任务需要的那一份。
 
+实证：[Signal Drift 专注曲 + 封面](https://github.com/convergeai-labs/anycap-examples/tree/main/entries/2026-09-signal-drift-focus-track)（双模型音乐 bake-off + 无字封面，audio-read/image-read 双门禁）。
+
 ### 🔍 [anycap-research](skills/anycap-research/SKILL.md)
 
 多源调研：市场/竞品研究、技术深挖、文献综述、证据支撑的对照比较。claim ledger 驱动，每条结论挂证据。

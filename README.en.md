@@ -72,6 +72,8 @@ Proof: the [RAG reference architecture](https://github.com/convergeai-labs/anyca
 
 The AnyCap media production workhorse: photos, product shots, brand marks, decorative images, image edits, video, music/speech, campaign & social films, memes with deterministic captions. Routes per medium to one-level references — load only what the current job needs.
 
+Proof: [Signal Drift focus track + cover](https://github.com/convergeai-labs/anycap-examples/tree/main/entries/2026-09-signal-drift-focus-track) (two-model music bake-off + no-text cover, dual audio-read/image-read gates).
+
 ### 🔍 [anycap-research](skills/anycap-research/SKILL.md)
 
 Multi-source investigations: market/competitive research, technical deep dives, literature reviews, evidence-backed comparisons. Claim-ledger driven — every conclusion carries its evidence.

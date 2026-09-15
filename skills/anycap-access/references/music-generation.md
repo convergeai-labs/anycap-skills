@@ -69,7 +69,8 @@ The schema response returns an array of schemas, each tagged with its operation 
           "tags": {"type": "string"},
           "title": {"type": "string"},
           "lyrics": {"type": "string"},
-          "make_instrumental": {"type": "boolean"}
+          "make_instrumental": {"type": "boolean"},
+          "duration": {"type": "integer"}
         }
       }
     }
@@ -154,10 +155,25 @@ Values are auto-parsed as JSON when possible:
 |---------|-----------|
 | `--param vocal_gender=f` | string `"f"` |
 | `--param make_instrumental=true` | boolean `true` |
-| `--param music_length_ms=30000` | integer `30000` |
+| `--param duration=60` | integer `60` (seconds — see below) |
 | `--param tags="rock,blues"` | string `"rock,blues"` |
 
 Note: `--instrumental`, `--tags`, `--title`, and `--lyrics` are convenience flags. The same values can be passed via `--param make_instrumental=true`, `--param tags=...`, etc.
+
+### Duration contract (verified 2026-09)
+
+- The live schema parameter is `duration`. Although the schema description says
+  "milliseconds", the CLI passes the value through in **seconds**:
+  `--param duration=60` yields a 60s clip. A millisecond value (e.g. `90000`)
+  can be rejected upstream (`music_length_ms must be between 3000 and 600000`).
+  Older docs referencing a `music_length_ms` parameter are stale.
+- Some models silently ignore `duration` and return a full-length track.
+  Always measure the artifact (`afinfo <file>`) instead of trusting the
+  requested duration.
+- Inspect the delivered file with `file`: some providers return a
+  multipart-wrapped body (reported as `data`) instead of a bare MP3. Extract
+  from the audio magic (ID3/RIFF/ftyp/OggS) to the closing boundary strip
+  padding, then validate with a full ffmpeg decode.
 
 ### Output Format
 
@@ -235,16 +251,19 @@ anycap music generate \
 # Check ElevenLabs parameters
 anycap music models elevanlabs-music schema
 
-# Generate with duration control (music_length_ms)
+# Generate an ambient soundscape (default length)
 anycap music generate \
   --prompt "ambient electronic soundscape with ethereal pads" \
   --model elevanlabs-music \
   -o ambient-soundscape.mp3
 
-# Generate a 60-second clip
+# Generate a 60-second clip (duration is seconds at the CLI)
 anycap music generate \
   --prompt "upbeat jazz piano trio" \
   --model elevanlabs-music \
-  --param music_length_ms=60000 \
+  --param duration=60 \
   -o jazz-trio.mp3
+
+# Verify the delivered artifact
+file jazz-trio.mp3 && afinfo jazz-trio.mp3 | grep duration
 ```

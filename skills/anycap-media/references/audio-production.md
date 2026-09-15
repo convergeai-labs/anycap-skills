@@ -24,6 +24,24 @@ anycap music generate --prompt "..." --model <model-id> -o track.mp3 \
 - Music generation takes 30-90s. Use async execution when possible.
 - Check model parameters via schema -- some models support `duration`, `genre`, `tags`.
 
+### Field Incidents (2026-09)
+
+- **`duration` is seconds at the CLI even when the schema text says
+  milliseconds.** A ms value passed through unconverted can be rejected
+  upstream (e.g. `music_length_ms must be between 3000 and 600000`). Pass
+  seconds, then verify the artifact with `afinfo` — never trust the requested
+  duration without measuring. Some models silently ignore `duration` and
+  return a full-length track.
+- **Output may arrive as a multipart body, not a bare audio file.** If `file`
+  reports `data`, look for a `------boundary…` wrapper: the payload starts at
+  the audio magic (ID3/RIFF/ftyp/OggS) and ends before the closing boundary,
+  possibly with padding bytes. Extract deterministically and validate with a
+  full ffmpeg decode.
+- **Same-prompt bake-off selection**: when quality gates tie, decide on
+  contract adherence (exact duration, requested format), not on vibes.
+- Field evidence: [Signal Drift entry](https://github.com/convergeai-labs/anycap-examples/tree/main/entries/2026-09-signal-drift-focus-track)
+  in anycap-examples.
+
 ## Audio Production
 
 Audio generation covers speech, dialogue, and complete audio scenes generated
